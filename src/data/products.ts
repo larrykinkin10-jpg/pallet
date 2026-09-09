@@ -10,6 +10,8 @@ import palletGamingLot from '../assets/images/pallet_gaming_lot_1788994889705.jp
 import palletVacuumLot from '../assets/images/pallet_vacuum_lot_1788994901223.jpg';
 import palletSmartHomeLot from '../assets/images/pallet_smarthome_lot_1788994914615.jpg';
 import palletOutdoorLot from '../assets/images/pallet_outdoor_lot_1788994925936.jpg';
+import palletLaptopsLot from '../assets/images/pallet_laptops_lot_1788995598793.jpg';
+import palletPowerLot from '../assets/images/pallet_power_lot_1788995613193.jpg';
 
 export const PRODUCTS: Product[] = [
   {
@@ -1109,6 +1111,1076 @@ export const PRODUCTS: Product[] = [
         date: '2026-03-02',
         title: 'Cleaned a 60m² stone terrace in under an hour',
         comment: 'Plenty of pressure to blast away years of moss and grime. Delivered in original yellow Kärcher box.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-21-ps5-pro-bundle',
+    palletNumber: 21,
+    palletCode: 'PLT-21',
+    sku: 'PLT-21-SNY-PS5PRO',
+    title: 'Sony PlayStation 5 Pro 2TB Console & DualSense Wireless Controllers Liquidation Pallet (Lot #21)',
+    brand: 'Sony PlayStation',
+    categoryId: 'computing-gaming',
+    categoryName: 'Computing & Gaming',
+    price: 589,
+    originalMSRP: 899,
+    discountPercentage: 34,
+    rating: 4.9,
+    reviewCount: 312,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 4,
+    featured: true,
+    badge: 'PALLET #21 • HIGH DEMAND',
+    images: [
+      palletGamingLot,
+      palletManifestSeal
+    ],
+    description: 'The pinnacle of console gaming performance. PS5 Pro features PlayStation Spectral Super Resolution (PSSR) AI upscaling, 2TB ultra-fast internal NVMe SSD, advanced ray tracing, and stable 4K 60-120fps fidelity mode gaming.',
+    keyFeatures: [
+      'Upgraded GPU with 67% more Compute Units and 28% faster memory',
+      'Advanced hardware ray tracing providing 2-3x dynamic lighting reflections',
+      'PlayStation Spectral Super Resolution (PSSR) AI-driven image clarity',
+      'Includes 2x official DualSense Wireless Controllers and Astro Bot pre-installed'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-21 / Lot 901',
+      'Storage': '2TB High-Speed NVMe Internal SSD',
+      'Video Output': 'HDMI 2.1 supporting 4K 120Hz, 8K, and VRR',
+      'Connectivity': 'Wi-Fi 7 (IEEE 802.11be), Bluetooth 5.1, Gigabit Ethernet',
+      'Warranty': '24 Months Official Sony European Guarantee'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-21',
+    reviews: [
+      {
+        id: 'r21',
+        userName: 'Sven Lindqvist',
+        userCountry: 'Sweden',
+        rating: 5,
+        date: '2026-03-05',
+        title: 'Factory shrink-wrapped master pallet',
+        comment: 'All serial numbers are intact and covered under official Sony European warranty. Absolutely unbeatable price for PS5 Pro.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-22-iphone-15-pro-max',
+    palletNumber: 22,
+    palletCode: 'PLT-22',
+    sku: 'PLT-22-APL-IP15PM',
+    title: 'Apple iPhone 15 Pro Max 256GB Natural Titanium Factory Sealed Master Carton Lot (Pallet Lot #22)',
+    brand: 'Apple',
+    categoryId: 'smartphones-tablets',
+    categoryName: 'Smartphones & Tablets',
+    price: 849,
+    originalMSRP: 1479,
+    discountPercentage: 43,
+    rating: 5.0,
+    reviewCount: 428,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 3,
+    featured: true,
+    badge: 'PALLET #22 • TITANIUM 256GB',
+    images: [
+      palletElectronicsLot,
+      palletManifestSeal
+    ],
+    description: 'Forged in titanium with aerospace-grade strength. Powered by the groundbreaking A17 Pro chip with console-quality graphics, customizable Action button, and Apple most powerful smartphone camera system with 5x optical zoom.',
+    keyFeatures: [
+      'Strong and lightweight titanium design with contoured edges and textured matte glass back',
+      '6.7-inch Super Retina XDR display with ProMotion 120Hz and Always-On display',
+      'A17 Pro industry-first 3-nanometer chip delivering unprecedented mobile graphics performance',
+      'Pro camera system with 48MP Main sensor and 5x optical telephoto lens (120mm equivalent)'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-22 / Lot 902',
+      'Finish': 'Natural Titanium',
+      'Capacity': '256GB NVMe High-Speed Flash',
+      'Port': 'USB-C supporting USB 3 speeds up to 10Gbps',
+      'Warranty': '12 Months Official Apple Worldwide Warranty'
+    },
+    variants: [
+      { id: 'v-natural-ti', name: 'Color', value: 'Natural Titanium' },
+      { id: 'v-blue-ti', name: 'Color', value: 'Blue Titanium' }
+    ],
+    warrantyMonths: 12,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-22',
+    reviews: [
+      {
+        id: 'r22',
+        userName: 'Matteo Rossi',
+        userCountry: 'Italy',
+        rating: 5,
+        date: '2026-03-04',
+        title: 'Original Apple pull-tabs completely intact',
+        comment: 'Checked warranty coverage on Apple portal immediately upon receiving the freight. 100% genuine sealed EU stock.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-23-dewalt-xr-8piece-combo',
+    palletNumber: 23,
+    palletCode: 'PLT-23',
+    sku: 'PLT-23-DWT-XR8PC',
+    title: 'DeWalt 18V XR Brushless 8-Piece Heavy-Duty Contractor Kit with ToughSystem 2.0 (Pallet Lot #23)',
+    brand: 'DeWalt',
+    categoryId: 'power-tools',
+    categoryName: 'Power Tools & DIY',
+    price: 749,
+    originalMSRP: 1349,
+    discountPercentage: 44,
+    rating: 4.9,
+    reviewCount: 164,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 5,
+    featured: false,
+    badge: 'PALLET #23 • CONTRACTOR KIT',
+    images: [
+      palletToolsLot,
+      palletManifestSeal
+    ],
+    description: 'Heavy-duty construction outfit for certified trade contractors. Packed in IP65 weather-sealed ToughSystem 2.0 stacking storage boxes. High-efficiency brushless motors provide 57% more run time than brushed equivalents.',
+    keyFeatures: [
+      'Includes DCD996 3-speed Combi Hammer Drill and DCF887 205Nm 3-speed Impact Driver',
+      'DCS570 184mm Circular Saw, DCS367 Compact Reciprocating Saw, and DCS331 Jigsaw',
+      'DCL050 Pivot Worklight, DCG405 125mm Angle Grinder, and DCH273 SDS+ Hammer',
+      'Includes 3x 5.0Ah XR Li-Ion Batteries, DCB115 Multi-Voltage Fast Charger, and ToughSystem Cart'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-23 / Lot 903',
+      'Battery Platform': 'DeWalt 18V XR Lithium-Ion',
+      'Motor Technology': 'Brushless Heavy-Duty',
+      'Storage System': 'ToughSystem 2.0 Modular Mobile Rolling Cart',
+      'Warranty': '36 Months DeWalt European Trade Warranty'
+    },
+    warrantyMonths: 36,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-23',
+    reviews: [
+      {
+        id: 'r23',
+        userName: 'Gerd Zimmermann',
+        userCountry: 'Germany',
+        rating: 5,
+        date: '2026-03-01',
+        title: 'Incredible value for building company',
+        comment: 'Every tool arrived brand new in original DeWalt ToughSystem boxes. The brushless motors run super cool under heavy load.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-24-dyson-airwrap-multistyler',
+    palletNumber: 24,
+    palletCode: 'PLT-24',
+    sku: 'PLT-24-DYS-AWPMLT',
+    title: 'Dyson Airwrap Multi-Styler Complete Long Nickel & Copper Presentation Case Lot (Pallet Lot #24)',
+    brand: 'Dyson',
+    categoryId: 'kitchen-appliances',
+    categoryName: 'Kitchen & Coffee',
+    price: 369,
+    originalMSRP: 599,
+    discountPercentage: 38,
+    rating: 4.8,
+    reviewCount: 385,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 6,
+    featured: false,
+    badge: 'PALLET #24 • FAST SELLER',
+    images: [
+      palletAppliancesLot,
+      palletManifestSeal
+    ],
+    description: 'Curl, shape, smooth, and hide flyaways with no extreme heat. Re-engineered styling attachments harness Enhanced Coanda airflow for faster, easier styling with greater control. Packaged in a cushioned Prussian blue presentation case.',
+    keyFeatures: [
+      'Powered by the Dyson digital motor V9 spinning at up to 110,000rpm',
+      'Intelligent heat control measures airflow temperature over 40 times a second',
+      'Airwrap barrels create clockwise and counterclockwise curls with a single barrel',
+      'Coanda smoothing dryer switches from drying to smoothing mode instantly'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-24 / Lot 904',
+      'Color Finish': 'Special Edition Nickel & Copper',
+      'Power Rating': '1300 Watts / 230V EU Plug',
+      'Case': 'Prussian Blue cushioned presentation storage case',
+      'Warranty': '24 Months Dyson Official European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-24',
+    reviews: [
+      {
+        id: 'r24',
+        userName: 'Anouk van der Meer',
+        userCountry: 'Netherlands',
+        rating: 5,
+        date: '2026-02-28',
+        title: 'Original Dyson security seals intact',
+        comment: 'Resold half the lot within 3 days and kept one for personal use. Authentic serial registered without any friction on Dyson.nl.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-25-samsung-neo-qled-65',
+    palletNumber: 25,
+    palletCode: 'PLT-25',
+    sku: 'PLT-25-SMG-65QN90',
+    title: 'Samsung 65-inch Neo QLED 4K QN90C Smart TV with Quantum Matrix & Neural Quantum Processor (Pallet Lot #25)',
+    brand: 'Samsung',
+    categoryId: 'tvs-home-cinema',
+    categoryName: 'TVs & Home Cinema',
+    price: 999,
+    originalMSRP: 1899,
+    discountPercentage: 47,
+    rating: 4.9,
+    reviewCount: 142,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 2,
+    featured: true,
+    badge: 'PALLET #25 • SAVE €900',
+    images: [
+      palletTvScreensLot,
+      palletManifestSeal
+    ],
+    description: 'Brilliant picture quality powered by Quantum Mini LEDs. Noticeable detail in both the darkest and brightest scenes with ultra-fine light control. Anti-Glare with Ultra Viewing Angle eliminates reflections in sunlit rooms.',
+    keyFeatures: [
+      'Quantum Matrix Technology with dense Quantum Mini LEDs for extreme peak contrast',
+      'Neural Quantum Processor 4K with 20 AI neural networks for real-time 4K upscaling',
+      'Motion Xcelerator Turbo Pro with up to 144Hz refresh rate and FreeSync Premium Pro',
+      'Dolby Atmos and Object Tracking Sound+ (OTS+) 60W 4.2.2 channel cinematic sound'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-25 / Lot 905',
+      'Screen Size': '65-inch (163cm diagonal)',
+      'Resolution': '4K Ultra HD (3840 x 2160)',
+      'Refresh Rate': '144Hz Native Motion Rate',
+      'HDMI Ports': '4x HDMI 2.1 (4K@144Hz, eARC, ALLM)',
+      'Warranty': '24 Months Official Samsung European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-25',
+    reviews: [
+      {
+        id: 'r25',
+        userName: 'Philippe Moreau',
+        userCountry: 'Belgium',
+        rating: 5,
+        date: '2026-03-03',
+        title: 'Outstanding brightness and zero glare',
+        comment: 'Pallet arrived securely strapped on wooden base with protective foam corners. TV boots up instantly with solar remote.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-26-bose-qc-ultra-bundle',
+    palletNumber: 26,
+    palletCode: 'PLT-26',
+    sku: 'PLT-26-BSE-QCUSET',
+    title: 'Bose QuietComfort Ultra Noise-Cancelling Headphones & SoundLink Max Speaker Crate (Pallet Lot #26)',
+    brand: 'Bose',
+    categoryId: 'electronics-audio',
+    categoryName: 'Electronics & Audio',
+    price: 419,
+    originalMSRP: 729,
+    discountPercentage: 43,
+    rating: 4.8,
+    reviewCount: 198,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 4,
+    featured: false,
+    badge: 'PALLET #26 • ULTRA AUDIO',
+    images: [
+      palletElectronicsLot,
+      palletManifestSeal
+    ],
+    description: 'The definitive Bose audio package. Includes the flagship Bose QuietComfort Ultra Over-Ear headphones with breakthrough spatialized audio and world-class active noise cancellation, bundled with the rugged IP67 SoundLink Max portable boombox.',
+    keyFeatures: [
+      'Bose Immersive Audio pushes boundaries of spatial listening regardless of source',
+      'CustomTune technology analyzes your ear shape to adapt sound and cancellation',
+      'Quiet, Aware, and Immersion listening modes with Wind Block feature',
+      'Bose SoundLink Max delivers deep stereo bass and 20 hours battery life with USB-C powerbank'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-26 / Lot 906',
+      'Headphone Battery': 'Up to 24 hours (up to 18 hours with Immersive Audio)',
+      'Speaker Rating': 'IP67 Waterproof & Dustproof',
+      'Bluetooth Version': 'Bluetooth 5.3 with Snapdragon Sound aptX Adaptive',
+      'Warranty': '24 Months Bose European Guarantee'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-26',
+    reviews: [
+      {
+        id: 'r26',
+        userName: 'Lukas Meyer',
+        userCountry: 'Switzerland',
+        rating: 5,
+        date: '2026-02-26',
+        title: 'World class noise cancellation',
+        comment: 'SoundLink Max shakes the room and QC Ultra blocks out all airplane hum. Super quick insured freight delivery from Venlo.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-27-roborock-s8-pro-ultra',
+    palletNumber: 27,
+    palletCode: 'PLT-27',
+    sku: 'PLT-27-RBK-S8PRO',
+    title: 'Roborock S8 Pro Ultra Robot Vacuum with RockDock Ultra Self-Emptying & Drying Station (Pallet Lot #27)',
+    brand: 'Roborock',
+    categoryId: 'floorcare-vacuums',
+    categoryName: 'Floorcare & Vacuums',
+    price: 799,
+    originalMSRP: 1499,
+    discountPercentage: 47,
+    rating: 4.9,
+    reviewCount: 215,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 3,
+    featured: true,
+    badge: 'PALLET #27 • AUTOMATED DOCK',
+    images: [
+      palletVacuumLot,
+      palletManifestSeal
+    ],
+    description: 'Completely forget about cleaning. The RockDock Ultra all-in-one docking station empties dust for up to 7 weeks, washes mop pads with warm air drying, and automatically refills clean water tank. Armed with 6,000Pa HyperForce suction.',
+    keyFeatures: [
+      'RockDock Ultra: Auto-Wash, Auto-Dry, Auto-Empty, and Auto-Refill in one unit',
+      'DuoRoller Riser dual rubber roller brushes resist hair tangles on carpets',
+      'VibraRise 2.0 sonic mopping system scrubs at 3,000 times/min with dual vibration modules',
+      'Reactive 3D Obstacle Avoidance identifies and maneuvers around pet toys, shoes, and cables'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-27 / Lot 907',
+      'Suction Power': '6,000Pa HyperForce suction',
+      'Mop Auto-Lifting': '5mm clearance when carpet detected',
+      'Dustbag Capacity': '2.5 Liters (Up to 7 weeks storage)',
+      'Warranty': '24 Months European Manufacturer Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-27',
+    reviews: [
+      {
+        id: 'r27',
+        userName: 'Wouter Janssen',
+        userCountry: 'Netherlands',
+        rating: 5,
+        date: '2026-03-06',
+        title: 'The drying function is a game changer',
+        comment: 'No damp odor because the dock blows warm air over the mop pad. Factory sealed inside master outer box.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-28-segway-ninebot-max-g2',
+    palletNumber: 28,
+    palletCode: 'PLT-28',
+    sku: 'PLT-28-SGW-MAXG2',
+    title: 'Segway Ninebot KickScooter MAX G2 E-Scooter with Hydraulic Dual Suspension Pallet (Pallet Lot #28)',
+    brand: 'Segway Ninebot',
+    categoryId: 'outdoor-garden',
+    categoryName: 'Outdoor & Garden Living',
+    price: 529,
+    originalMSRP: 899,
+    discountPercentage: 41,
+    rating: 4.8,
+    reviewCount: 167,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 4,
+    featured: false,
+    badge: 'PALLET #28 • 70KM RANGE',
+    images: [
+      palletOutdoorLot,
+      palletManifestSeal
+    ],
+    description: 'The master of city commuting. Features RideyLONG range technology delivering up to 70km on a single charge, rear-wheel drive 900W motor conquering 22% inclines, front hydraulic suspension, and rear adjustable double springs.',
+    keyFeatures: [
+      'Up to 70km theoretical range powered by 551Wh battery with Smart-BMS system',
+      'Double suspension system: front hydraulic damper and rear double spring shock absorption',
+      '10-inch self-healing tubeless tires with internal jelly sealing layer against punctures',
+      'Built-in front and rear turn signal indicators and Apple Find My network integration'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-28 / Lot 908',
+      'Motor Power': '450W Nominal / 900W Maximum',
+      'Max Speed': '25 km/h (EU Compliant)',
+      'Braking System': 'Front Drum Brake + Rear Electronic Regenerative Brake (E-ABS)',
+      'Warranty': '24 Months Segway European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-28',
+    reviews: [
+      {
+        id: 'r28',
+        userName: 'Florian Weber',
+        userCountry: 'Germany',
+        rating: 5,
+        date: '2026-03-02',
+        title: 'Smooth ride over cobblestones',
+        comment: 'The dual suspension absorbs European city paving perfectly. Delivered with EU certificate of conformity.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-29-sage-barista-touch-impress',
+    palletNumber: 29,
+    palletCode: 'PLT-29',
+    sku: 'PLT-29-SGE-BTOUCH',
+    title: 'Sage Barista Touch Impress Brushed Stainless Steel Espresso Machine Pallet Lot (Pallet Lot #29)',
+    brand: 'Sage / Breville',
+    categoryId: 'kitchen-appliances',
+    categoryName: 'Kitchen & Coffee',
+    price: 649,
+    originalMSRP: 1199,
+    discountPercentage: 46,
+    rating: 4.9,
+    reviewCount: 224,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 3,
+    featured: true,
+    badge: 'PALLET #29 • BARISTA CHOICE',
+    images: [
+      palletAppliancesLot,
+      palletManifestSeal
+    ],
+    description: 'Third wave specialty coffee with assisted tamping and automated microfoam texturing. The touch touchscreen displays step-by-step barista guidance, while ThermoJet heating reaches extraction temperature in just 3 seconds.',
+    keyFeatures: [
+      'Impress Puck System delivers precision dose calculation and 10kg assisted tamping with 7-degree twist',
+      'Auto MilQ automated hands-free microfoam texturing with settings optimized for Oat, Almond, and Soy milk',
+      'ThermoJet heating system reaches optimum extraction temperature in 3 seconds flat',
+      'Baratza European precision hardened steel conical burrs with 30 customizable grind sizes'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-29 / Lot 909',
+      'Material': 'Brushed Stainless Steel die-cast casing',
+      'Water Tank': '2.0 Liters with integrated water filter',
+      'Bean Hopper': '340g with airtight UV locking seal',
+      'Warranty': '24 Months Official Sage European Guarantee'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-29',
+    reviews: [
+      {
+        id: 'r29',
+        userName: 'Marcello Moretti',
+        userCountry: 'Italy',
+        rating: 5,
+        date: '2026-02-27',
+        title: 'Cafe quality espresso at home',
+        comment: 'Assisted tamping leaves zero coffee grounds on the counter. Silky microfoam for latte art every single morning.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-30-milwaukee-m18-fuel-trade',
+    palletNumber: 30,
+    palletCode: 'PLT-30',
+    sku: 'PLT-30-MLW-M18FUL',
+    title: 'Milwaukee M18 FUEL 6-Tool Heavy-Duty Trade Monster Kit with PACKOUT Rolling Cart (Pallet Lot #30)',
+    brand: 'Milwaukee',
+    categoryId: 'power-tools',
+    categoryName: 'Power Tools & DIY',
+    price: 829,
+    originalMSRP: 1599,
+    discountPercentage: 48,
+    rating: 5.0,
+    reviewCount: 147,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 4,
+    featured: false,
+    badge: 'PALLET #30 • TRADE MONSTER',
+    images: [
+      palletToolsLot,
+      palletManifestSeal
+    ],
+    description: 'The heavyweight standard for demolition, framing, and industrial mechanical installations. Milwaukee M18 FUEL combines POWERSTATE brushless motors, REDLITHIUM battery architecture, and REDLINK PLUS intelligence for unmatched durability.',
+    keyFeatures: [
+      'M18 FPD3 Heavy Duty Percussion Combi Drill with monster 158Nm torque',
+      'M18 FID3 1/4" Hex Impact Driver with 4-mode DRIVE CONTROL and 226Nm output',
+      'M18 CCS55 55mm Circular Saw, M18 FSZ SAWZALL, and M18 FSAG125X 125mm Angle Grinder',
+      'Includes 2x 5.0Ah REDLITHIUM packs, 1x 8.0Ah HIGH OUTPUT battery, M12-18FC Rapid Charger, and PACKOUT rolling chest'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-30 / Lot 910',
+      'Motor': 'POWERSTATE Brushless',
+      'Electronics': 'REDLINK PLUS Hardware Intelligence',
+      'Storage': 'Milwaukee PACKOUT Modular Rolling Tool Box',
+      'Warranty': '36 Months Official Milwaukee Commercial Warranty'
+    },
+    warrantyMonths: 36,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-30',
+    reviews: [
+      {
+        id: 'r30',
+        userName: 'Stefan Kowalski',
+        userCountry: 'Poland',
+        rating: 5,
+        date: '2026-03-04',
+        title: 'Indestructible tools for the job site',
+        comment: '158Nm drill punches through solid oak and concrete without flinching. PACKOUT cart rolled right off the delivery pallet into work.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-31-luxury-designer-handbags',
+    palletNumber: 31,
+    palletCode: 'PLT-31',
+    sku: 'PLT-31-DSG-HBGAUT',
+    title: 'European Luxury Designer Leather Handbags & Accessories Assortment (Pallet Lot #31)',
+    brand: 'Luxury Designer',
+    categoryId: 'apparel-footwear',
+    categoryName: 'Apparel, Footwear & Designer Goods',
+    price: 1890,
+    originalMSRP: 4850,
+    discountPercentage: 61,
+    rating: 4.9,
+    reviewCount: 92,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 2,
+    featured: true,
+    badge: 'PALLET #31 • 61% OFF LUXURY',
+    images: [
+      palletApparelLot,
+      palletManifestSeal
+    ],
+    description: 'Certified authentic Grade-A department store liquidation crate sourced from Milan and Paris boutique clearances. Assortment includes structured full-grain calfskin shoulder bags, crossbodies, cardholders, and matching leather wallets from Gucci, Prada, and Saint Laurent.',
+    keyFeatures: [
+      '100% Guaranteed Authentic with RFID microchip verification and stamped manufacturer serial numbers',
+      'Crafted in Italy and France using vegetable-tanned grain calfskin leather with gold-tone hardware',
+      'All pieces in original protective fabric dust bags with authentic boutique tags and care booklets',
+      'Ideal for luxury resellers, boutique outlets, and high-end retail clearance merchants'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-31 / Lot 911',
+      'Origin': 'Italian & French Department Store Clearances',
+      'Authentication': 'RFID Tagged & Certified Grade-A Manifested',
+      'Included Items': '12x Designer Leather Bags + 18x Small Leather Goods (Wallets/Pouch)',
+      'Condition': 'Pristine Store Overstock (Never Displayed)'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-31',
+    reviews: [
+      {
+        id: 'r31',
+        userName: 'Camille Leroux',
+        userCountry: 'France',
+        rating: 5,
+        date: '2026-03-01',
+        title: 'Authenticity checked out 100%',
+        comment: 'Scanned microchips and matched serials against boutique records. Flawless gold hardware and beautiful leather smell.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-32-apple-macbook-pro-14-m3',
+    palletNumber: 32,
+    palletCode: 'PLT-32',
+    sku: 'PLT-32-APL-MBP14M',
+    title: 'Apple MacBook Pro 14-inch M3 Pro (18GB Unified Memory, 512GB SSD, Space Black) Master Crate Lot (Pallet Lot #32)',
+    brand: 'Apple',
+    categoryId: 'computing-gaming',
+    categoryName: 'Computing & Gaming',
+    price: 1490,
+    originalMSRP: 2499,
+    discountPercentage: 40,
+    rating: 5.0,
+    reviewCount: 189,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 3,
+    featured: true,
+    badge: 'PALLET #32 • M3 PRO SPACE BLACK',
+    images: [
+      palletLaptopsLot,
+      palletManifestSeal
+    ],
+    description: 'The world most advanced pro laptop. Powered by M3 Pro with 11-core CPU and 14-core GPU with hardware-accelerated ray tracing. Liquid Retina XDR display with 1,000 nits sustained brightness and up to 18 hours of continuous battery life.',
+    keyFeatures: [
+      'Apple M3 Pro silicon delivers blistering speed for 4K video editing, 3D rendering, and software compiling',
+      '14.2-inch Liquid Retina XDR display with Extreme Dynamic Range and ProMotion 120Hz refresh rate',
+      '18GB unified high-speed memory and 512GB PCIe Gen 4 SSD storage',
+      'MagSafe 3, 3x Thunderbolt 4 ports, HDMI port, SDXC card slot, and studio-quality 3-mic array'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-32 / Lot 912',
+      'Chipset': 'Apple M3 Pro (11-core CPU, 14-core GPU, 16-core Neural Engine)',
+      'Color': 'Space Black Anodized Aluminum with anti-fingerprint seal',
+      'Keyboard': 'European ISO QWERTY Backlit Magic Keyboard with Touch ID',
+      'Warranty': '12 Months Official Apple Worldwide Warranty'
+    },
+    warrantyMonths: 12,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-32',
+    reviews: [
+      {
+        id: 'r32',
+        userName: 'Lars Thomsen',
+        userCountry: 'Denmark',
+        rating: 5,
+        date: '2026-03-06',
+        title: 'Original brown Apple shipper with security pull tab',
+        comment: 'Clean shrinkwrap, Space Black looks phenomenal, battery cycle count was 0 out of the box. Top tier liquidation.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-33-ecoflow-delta-2-max',
+    palletNumber: 33,
+    palletCode: 'PLT-33',
+    sku: 'PLT-33-ECO-DLT2MX',
+    title: 'EcoFlow DELTA 2 Max 2400W Portable Power Station with 400W Bifacial Solar Panel (Pallet Lot #33)',
+    brand: 'EcoFlow',
+    categoryId: 'outdoor-garden',
+    categoryName: 'Outdoor & Garden Living',
+    price: 1149,
+    originalMSRP: 2099,
+    discountPercentage: 45,
+    rating: 4.9,
+    reviewCount: 135,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 3,
+    featured: true,
+    badge: 'PALLET #33 • 2048WH SOLAR',
+    images: [
+      palletPowerLot,
+      palletManifestSeal
+    ],
+    description: 'Energy independence for home backup, off-grid camping, and outdoor workstations. 2048Wh premium LFP (LiFePO4) chemistry lasts 10 years of daily use (3,000 cycles). Charges from 0-80% in 43 minutes with dual AC + solar combination.',
+    keyFeatures: [
+      '2048Wh LFP battery expandable up to 6144Wh with extra battery modules',
+      '2400W pure sine wave AC output (X-Boost mode powers appliances up to 3100W)',
+      'Charges in 81 minutes from AC wall outlet or 2.3 hours via 1000W solar input',
+      'Includes 400W IP68 waterproof portable folding bifacial solar panel with kickstand case'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-33 / Lot 913',
+      'Battery Chemistry': 'LFP (LiFePO4) - 3000 cycles to 80%+ capacity',
+      'AC Outlets': '4x 230V EU Schuko (2400W continuous / 4800W surge)',
+      'Solar Input': '11-60V 15A single port / 1000W Max dual ports',
+      'Warranty': '60 Months (5 Years) EcoFlow European Manufacturer Guarantee'
+    },
+    warrantyMonths: 60,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-33',
+    reviews: [
+      {
+        id: 'r33',
+        userName: 'Hannes Gruber',
+        userCountry: 'Austria',
+        rating: 5,
+        date: '2026-03-03',
+        title: 'Runs my power tools and fridge with ease',
+        comment: 'Whisper quiet at under 30dB on low loads. Delivered on heavy duty pallet with dangerous goods battery markings compliant with ADR.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-34-garmin-marq-gen2-adventurer',
+    palletNumber: 34,
+    palletCode: 'PLT-34',
+    sku: 'PLT-34-GRM-MRQG2A',
+    title: 'Garmin MARQ Gen 2 Adventurer Tool Watch with Grade-5 Titanium & Sapphire AMOLED (Pallet Lot #34)',
+    brand: 'Garmin',
+    categoryId: 'smartwatches-wearables',
+    categoryName: 'Smartwatches & Fitness',
+    price: 980,
+    originalMSRP: 1950,
+    discountPercentage: 50,
+    rating: 4.9,
+    reviewCount: 88,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 4,
+    featured: false,
+    badge: 'PALLET #34 • HALF PRICE',
+    images: [
+      palletElectronicsLot,
+      palletManifestSeal
+    ],
+    description: 'A modern tool watch handcrafted from a single block of Grade-5 titanium for 5x greater hardness than steel. Features a domed sapphire crystal, 360-degree compass markings on the bezel, and an innovative hybrid leather/FKM rubber sweat-resistant strap.',
+    keyFeatures: [
+      'Brilliant 1.2-inch AMOLED touchscreen display readable in direct alpine sunlight',
+      'Grade-5 titanium case with 360-degree compass bezel and ceramic inlay',
+      'Multi-band GNSS with SatIQ technology ensuring pinpoint positioning in canyons and forests',
+      'Preloaded TopoActive Europe maps, ski resort maps, and golf course maps worldwide'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-34 / Lot 914',
+      'Case Diameter': '46mm Grade-5 Titanium',
+      'Lens': 'Domed Sapphire Crystal',
+      'Water Rating': '10 ATM (100 meters dive & swim rated)',
+      'Battery Life': 'Up to 16 days smartwatch mode / 42 hours GPS mode',
+      'Warranty': '24 Months Official Garmin European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-34',
+    reviews: [
+      {
+        id: 'r34',
+        userName: 'Bernhard Hofer',
+        userCountry: 'Switzerland',
+        rating: 5,
+        date: '2026-02-24',
+        title: 'Pure luxury military craft',
+        comment: 'The magnetic charging clip snaps into place with a solid click. Topo maps on AMOLED screen make alpine trails effortless.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-35-dji-mini-4-pro-fly-more',
+    palletNumber: 35,
+    palletCode: 'PLT-35',
+    sku: 'PLT-35-DJI-MN4FLM',
+    title: 'DJI Mini 4 Pro Fly More Combo with DJI RC 2 Smart Controller Pallet Lot (Pallet Lot #35)',
+    brand: 'DJI',
+    categoryId: 'electronics-audio',
+    categoryName: 'Electronics & Audio',
+    price: 679,
+    originalMSRP: 1129,
+    discountPercentage: 40,
+    rating: 5.0,
+    reviewCount: 260,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 5,
+    featured: false,
+    badge: 'PALLET #35 • FLY MORE COMBO',
+    images: [
+      palletElectronicsLot,
+      palletManifestSeal
+    ],
+    description: 'DJI most advanced mini drone to date. Weighing under 249g to exempt pilots from strict training certifications in many countries. Features omnidirectional obstacle sensing, ActiveTrack 360, 4K/60fps HDR true vertical video, and 20km FHD video transmission.',
+    keyFeatures: [
+      'Ultralight sub-249g design requires no registration or license in most European jurisdictions (C0 certified)',
+      'Omnidirectional Active Obstacle Sensing with wide-angle and downward vision sensors',
+      'DJI RC 2 Smart Controller with built-in 5.5-inch 700-nit ultra-bright FHD screen',
+      'Includes 3x Intelligent Flight Batteries (up to 102 mins flight), Two-Way Charging Hub, and shoulder bag'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-35 / Lot 915',
+      'Camera': '1/1.3-inch CMOS, f/1.7 aperture, 48MP Photo, 4K/60fps HDR',
+      'Transmission': 'DJI O4 HD video transmission up to 20km range',
+      'Color Profile': '10-bit D-Log M and HLG for pro color grading',
+      'Warranty': '24 Months DJI European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-35',
+    reviews: [
+      {
+        id: 'r35',
+        userName: 'Daan Meijer',
+        userCountry: 'Netherlands',
+        rating: 5,
+        date: '2026-03-05',
+        title: 'No pilot exam needed, unbelievable 4K quality',
+        comment: 'Factory shrinkwrap with DJI tamper seal. RC 2 remote screen is bright enough to see in noon sunshine.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-36-kitchenaid-artisan-stand-mixer',
+    palletNumber: 36,
+    palletCode: 'PLT-36',
+    sku: 'PLT-36-KCH-ART48L',
+    title: 'KitchenAid Artisan 4.8L Tilt-Head Stand Mixer with Dual Bowls & Flex Edge Beater (Pallet Lot #36)',
+    brand: 'KitchenAid',
+    categoryId: 'kitchen-appliances',
+    categoryName: 'Kitchen & Coffee',
+    price: 349,
+    originalMSRP: 649,
+    discountPercentage: 46,
+    rating: 4.9,
+    reviewCount: 310,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 5,
+    featured: false,
+    badge: 'PALLET #36 • CAST IRON ARTISAN',
+    images: [
+      palletAppliancesLot,
+      palletManifestSeal
+    ],
+    description: 'The kitchen icon built to last generations. Full die-cast metal construction ensures rock-solid stability during kneading heavy bread doughs. Features planetary mixing action where the beater rotates while moving around the bowl to 59 touchpoints.',
+    keyFeatures: [
+      'Full zinc die-cast metal construction with durable baked-on enamel finish',
+      'Includes dual stainless steel bowls (4.8L and 3.0L) for uninterrupted baking',
+      'Original planetary mixing action with 10 speeds from gentle fold to fast whip',
+      'Includes flex edge beater, 6-wire whip, dough hook, flat beater, and pouring shield'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-36 / Lot 916',
+      'Motor': 'Direct Drive 300W high-efficiency induction motor',
+      'Finish': 'Cast Iron Matte Anthracite / Empire Red',
+      'Capacity': '4.8L (Bakes up to 9 dozen cookies or 2kg bread dough)',
+      'Warranty': '60 Months (5 Years) KitchenAid European Warranty'
+    },
+    variants: [
+      { id: 'v-matte-black', name: 'Color', value: 'Matte Anthracite' },
+      { id: 'v-empire-red', name: 'Color', value: 'Empire Red' }
+    ],
+    warrantyMonths: 60,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-36',
+    reviews: [
+      {
+        id: 'r36',
+        userName: 'Inge De Smet',
+        userCountry: 'Belgium',
+        rating: 5,
+        date: '2026-02-25',
+        title: 'Heirloom quality mixer',
+        comment: 'Doesn’t budge on the counter even when kneading 1.5kg of sourdough rye. Two bowls save so much cleanup time.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-37-philips-sonicare-9900-prestige',
+    palletNumber: 37,
+    palletCode: 'PLT-37',
+    sku: 'PLT-37-PHL-SC9900',
+    title: 'Philips Sonicare DiamondClean Prestige 9900 with SenseIQ AI & Leather Travel Case (Pallet Lot #37)',
+    brand: 'Philips Sonicare',
+    categoryId: 'kitchen-appliances',
+    categoryName: 'Kitchen & Coffee',
+    price: 189,
+    originalMSRP: 349,
+    discountPercentage: 46,
+    rating: 4.8,
+    reviewCount: 176,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 6,
+    featured: false,
+    badge: 'PALLET #37 • SENSEIQ AI',
+    images: [
+      palletAppliancesLot,
+      palletManifestSeal
+    ],
+    description: 'The most advanced electric toothbrush in the world. SenseIQ technology senses pressure, motion, and coverage up to 100 times per second, automatically adjusting intensity when you press too hard. Finished in seamless Champagne Gold with stitched vegan leather charging case.',
+    keyFeatures: [
+      'SenseIQ real-time adaptive feedback protects enamel and receding gums',
+      'All-in-One brush head combines angled bristles for 20x more plaque removal and 15x healthier gums',
+      'Sonic fluid action drives micro-bubbles between teeth at 62,000 movements per minute',
+      'USB-C rechargeable vegan leather travel case allows charging directly inside the case'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-37 / Lot 917',
+      'Finish': 'Champagne Gold / Midnight Blue',
+      'Sensors': 'Pressure, scrub, position, coverage, and motion sensors',
+      'App Integration': 'Sonicare AI app with 3D mouth mapping and personalized coaching',
+      'Warranty': '24 Months Official Philips European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-37',
+    reviews: [
+      {
+        id: 'r37',
+        userName: 'Katarina Novak',
+        userCountry: 'Slovenia',
+        rating: 5,
+        date: '2026-03-01',
+        title: 'My teeth feel dental-cleaned every day',
+        comment: 'The haptic light warns if you scrub too hard. Premium leather travel case charges via standard USB-C.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-38-marshall-stanmore-iii',
+    palletNumber: 38,
+    palletCode: 'PLT-38',
+    sku: 'PLT-38-MSH-STM3BT',
+    title: 'Marshall Stanmore III Bluetooth Home Speaker & Major V Wireless Headphones Pack (Pallet Lot #38)',
+    brand: 'Marshall',
+    categoryId: 'electronics-audio',
+    categoryName: 'Electronics & Audio',
+    price: 269,
+    originalMSRP: 499,
+    discountPercentage: 46,
+    rating: 4.9,
+    reviewCount: 194,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 5,
+    featured: false,
+    badge: 'PALLET #38 • ICONIC SOUND',
+    images: [
+      palletElectronicsLot,
+      palletManifestSeal
+    ],
+    description: 'Classic rock heritage meets cutting-edge acoustic engineering. Stanmore III has an outward-angled tweeter array and updated waveguides to deliver a consistently solid sound that is so wide it chases you around the room. Bundled with Major V on-ear headphones with 100+ hours battery life.',
+    keyFeatures: [
+      'Outward-angled tweeters and updated waveguides deliver an expansive stereo stage',
+      'Dynamic Loudness balances tonal balance of sound to ensure music sounds brilliant at every volume',
+      'Bluetooth 5.2 next-generation LE Audio-ready with multi-host functionality and 3.5mm AUX input',
+      'Includes Marshall Major V headphones delivering 100+ hours wireless playtime with wireless charging'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-38 / Lot 918',
+      'Amplifiers': 'One 50W Class D for woofer + Two 15W Class D for tweeters (80W total)',
+      'Cabinet Principle': 'Bass-reflex with rear port and analogue brass control knobs',
+      'Finish': 'Classic Black vinyl textured casing with salt & pepper vintage fret',
+      'Warranty': '24 Months Official European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-38',
+    reviews: [
+      {
+        id: 'r38',
+        userName: 'Lucas Larsson',
+        userCountry: 'Sweden',
+        rating: 5,
+        date: '2026-03-04',
+        title: 'Deep analog bass and timeless looks',
+        comment: 'Looks gorgeous on the sideboard and shakes the floor on rock tracks. The headphones play forever on one charge.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-39-stihl-cordless-landscape-set',
+    palletNumber: 39,
+    palletCode: 'PLT-39',
+    sku: 'PLT-39-STL-MSA200',
+    title: 'Stihl MSA 200 C-B Cordless Chainsaw & FSA 86 R Brushcutter AP System Pro Crate (Pallet Lot #39)',
+    brand: 'Stihl',
+    categoryId: 'outdoor-garden',
+    categoryName: 'Outdoor & Garden Living',
+    price: 649,
+    originalMSRP: 1190,
+    discountPercentage: 45,
+    rating: 5.0,
+    reviewCount: 118,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 3,
+    featured: false,
+    badge: 'PALLET #39 • STIHL PRO KIT',
+    images: [
+      palletOutdoorLot,
+      palletManifestSeal
+    ],
+    description: 'Quiet, emission-free power for professional arborists, forestry caretakers, and property estates. Stihl AP battery system delivers gas-equivalent cutting torque without exhaust, pull cords, or engine maintenance.',
+    keyFeatures: [
+      'Stihl MSA 200 C-B with 35cm Guide Bar and 1/4" Picco Micro 3 (PM3) low-vibration saw chain',
+      'Toolless Stihl Quick Chain Tensioning (B) and transparent oil tank with toolless filler cap',
+      'Stihl FSA 86 R cordless brushcutter with loop handle and AutoCut C 6-2 mowing head',
+      'Includes 2x AP 300 S high-capacity lithium-ion batteries and AL 500 high-speed charger (35-min charge)'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-39 / Lot 919',
+      'Battery System': 'Stihl AP Professional 36V System',
+      'Chainsaw Bar Length': '35cm / 14 inches',
+      'Weather Protection': 'IPX4 certified for operation in pouring rain',
+      'Warranty': '24 Months Stihl Commercial European Warranty'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-39',
+    reviews: [
+      {
+        id: 'r39',
+        userName: 'Klaus Brandner',
+        userCountry: 'Germany',
+        rating: 5,
+        date: '2026-03-03',
+        title: 'Professional tree work without gas fumes',
+        comment: 'Cuts through 30cm pine logs effortlessly. The AL 500 charger recharges the AP 300S batteries before the spare runs out.',
+        verifiedPurchase: true
+      }
+    ]
+  },
+  {
+    id: 'prod-plt-40-stone-island-moncler-outerwear',
+    palletNumber: 40,
+    palletCode: 'PLT-40',
+    sku: 'PLT-40-STN-MNCJKT',
+    title: 'Stone Island & Moncler Designer Down Jackets & Technical Outerwear Overstock Lot (Pallet Lot #40)',
+    brand: 'Designer Outerwear',
+    categoryId: 'apparel-footwear',
+    categoryName: 'Apparel, Footwear & Designer Goods',
+    price: 2150,
+    originalMSRP: 5600,
+    discountPercentage: 62,
+    rating: 5.0,
+    reviewCount: 79,
+    condition: 'Brand New (Factory Sealed)',
+    inStock: true,
+    stockCount: 2,
+    featured: true,
+    badge: 'PALLET #40 • 62% OFF DOWN JACKETS',
+    images: [
+      palletApparelLot,
+      palletManifestSeal
+    ],
+    description: 'High-margin winter luxury liquidation lot sourced from luxury department store seasonal clearances across Zurich, Milan, and Amsterdam. Master sealed garments include Stone Island Crinkle Reps NY garment-dyed down parkas and iconic Moncler Maya lacquer down jackets.',
+    keyFeatures: [
+      'Certified authentic with active Certilogo and Moncler NFC microchip security authentication tags',
+      'Direct premium 90/10 goose down filling with lightweight water-resistant technical membranes',
+      'Includes original branded velvet hanger sets, protective zip dust bags, and boutique spare button pouches',
+      'Grade-A pristine warehouse clearance with zero defects or retail customer returns'
+    ],
+    specifications: {
+      'Pallet Reference': 'PLT-40 / Lot 920',
+      'Lot Size': '14x Premium Down Parkas & Quilted Jackets (Assorted sizes S through XXL)',
+      'Brands Included': 'Stone Island (8 units) & Moncler (6 units)',
+      'Authentication': 'Certilogo QR + Moncler NFC micro-tag certified',
+      'Packaging': 'Hanging protective heavy-duty garment shipping cartons on pallet base'
+    },
+    warrantyMonths: 24,
+    freeShippingEligible: true,
+    sourceLot: 'Trade Port Venlo Liquidation Lot #PLT-40',
+    reviews: [
+      {
+        id: 'r40',
+        userName: 'Alessandro Bardi',
+        userCountry: 'Italy',
+        rating: 5,
+        date: '2026-03-07',
+        title: 'Certilogo scanned authentic on every single jacket',
+        comment: 'Moncler Maya lacquer jackets and Stone Island compass badges all pristine. Sold 4 pieces in 48 hours with tremendous margins.',
         verifiedPurchase: true
       }
     ]

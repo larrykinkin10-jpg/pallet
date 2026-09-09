@@ -239,10 +239,10 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
         <div className="sm:hidden bg-slate-900 border-t border-slate-800 p-4 space-y-3.5">
-          {/* Mobile Direct 20 Pallets Dropdown */}
+          {/* Mobile Direct Pallets Dropdown */}
           <div className="space-y-1.5 pb-2 border-b border-slate-800">
             <span className="text-slate-400 font-bold uppercase tracking-wider block text-[10px]">
-              All 20 Pallet Products Dropdown
+              Direct Pallet Inventory Selector
             </span>
             <PalletDropdownMenu
               currency={currency}
