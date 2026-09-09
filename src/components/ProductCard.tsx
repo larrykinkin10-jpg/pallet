@@ -51,6 +51,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           alt={product.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/30" />
 
@@ -79,10 +80,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
 
-        {/* Condition Tag Bottom Left */}
+        {/* Condition & Pallet Status Tag Bottom */}
         <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between text-[10px]">
-          <span className="bg-slate-900/90 backdrop-blur px-2 py-0.5 rounded text-emerald-300 font-medium border border-slate-700/60">
-            {product.condition}
+          <span className="bg-slate-900/90 backdrop-blur px-2 py-0.5 rounded text-emerald-300 font-medium border border-slate-700/60 flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Sealed Pallet • Ready to Deliver
           </span>
           {product.stockCount <= 5 && (
             <span className="text-amber-400 font-bold bg-amber-950/80 px-1.5 py-0.5 rounded border border-amber-700/40">
@@ -97,9 +99,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div>
           {/* Brand & Category */}
           <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
-            <span className="font-bold text-emerald-400 uppercase tracking-wide">
-              {product.brand}
-            </span>
+            <div className="flex items-center gap-1.5">
+              {product.palletCode && (
+                <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono font-bold text-[10px] border border-emerald-500/30">
+                  {product.palletCode}
+                </span>
+              )}
+              <span className="font-bold text-emerald-400 uppercase tracking-wide">
+                {product.brand}
+              </span>
+            </div>
             <span className="text-[11px] truncate max-w-[120px]">
               {product.categoryName}
             </span>

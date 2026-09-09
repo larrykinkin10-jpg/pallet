@@ -15,6 +15,7 @@ import { Product, Currency, Category } from '../types';
 import { PRODUCTS } from '../data/products';
 import { CATEGORIES } from '../data/categories';
 import { ProductCard } from './ProductCard';
+import { PalletDropdownMenu } from './PalletDropdownMenu';
 import { formatCurrency } from '../utils/formatters';
 
 interface CatalogViewProps {
@@ -179,6 +180,15 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
             <span>Filters</span>
           </button>
         </div>
+      </div>
+
+      {/* Prominent Quick Pallet Dropdown Selector Bar */}
+      <div className="mb-6">
+        <PalletDropdownMenu
+          currency={currency}
+          onSelectProduct={onViewDetails}
+          variant="catalog"
+        />
       </div>
 
       {/* Main Grid: Sidebar Filters + Products List */}

@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({
               Departments
             </h4>
             <ul className="space-y-2 text-xs">
-              {CATEGORIES.slice(0, 6).map(cat => (
+              {CATEGORIES.map(cat => (
                 <li key={cat.id}>
                   <button
                     onClick={() => onSelectCategory(cat.id)}
@@ -165,9 +165,9 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="grid grid-cols-2 gap-2 text-[10px] font-mono font-bold text-slate-300">
               <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center">VISA / MASTERCARD</span>
-              <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center">PAYPAL</span>
-              <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center">KLARNA (PAY IN 30)</span>
-              <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center">iDEAL / BANCONTACT</span>
+              <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center text-emerald-400">BUNQ</span>
+              <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center">BANK TRANSFER</span>
+              <span className="bg-slate-900 border border-slate-800 p-2 rounded-lg text-center text-teal-300">USDT</span>
             </div>
 
             <div className="pt-2">

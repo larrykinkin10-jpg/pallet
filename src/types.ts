@@ -50,6 +50,8 @@ export interface Product {
   reviews: ProductReview[];
   freeShippingEligible: boolean;
   sourceLot?: string; // Origin liquidation lot reference
+  palletNumber?: number; // 1 to 20
+  palletCode?: string; // e.g. "PLT-01" to "PLT-20"
 }
 
 export interface Category {
@@ -101,7 +103,7 @@ export interface ShopOrder {
   shippingMethod: ShippingMethod;
   vatEur: number;
   totalEur: number;
-  paymentMethod: 'card' | 'paypal' | 'klarna' | 'ideal' | 'applepay';
+  paymentMethod: 'card' | 'bunq' | 'bank_transfer' | 'usdt';
   customer: OrderCustomerInfo;
   status: 'Order Confirmed' | 'Packing in Venlo' | 'Dispatched' | 'Delivered';
   trackingNumber: string;

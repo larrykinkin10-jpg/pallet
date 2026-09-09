@@ -26,7 +26,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
             </h2>
           </div>
           <p className="text-xs text-slate-400 max-w-sm">
-            Direct excess inventory and certified overstock across 10 top consumer sectors with up to 80% savings.
+            Direct excess inventory and certified overstock across {CATEGORIES.length} top consumer departments with up to 80% savings.
           </p>
         </div>
 

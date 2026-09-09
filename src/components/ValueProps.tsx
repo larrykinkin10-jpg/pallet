@@ -28,7 +28,7 @@ export const ValueProps: React.FC = () => {
     {
       icon: Lock,
       title: '100% Secure Checkout',
-      description: 'Encrypted payments via Visa, Mastercard, PayPal, Klarna Pay Later, and iDEAL.'
+      description: 'Encrypted payments via Visa, Mastercard, bunq, SEPA Bank Transfer, and USDT.'
     }
   ];
 

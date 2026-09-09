@@ -9,7 +9,10 @@ import {
   ArrowRight, 
   ChevronRight, 
   Zap, 
-  AlertCircle 
+  AlertCircle,
+  Copy,
+  Building2,
+  Coins
 } from 'lucide-react';
 import { CartItem, Currency, ShopOrder, ShippingMethod } from '../types';
 import { formatCurrency } from '../utils/formatters';
@@ -48,14 +51,28 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
     postalCode: '1016 EK',
     country: 'The Netherlands',
     // Payment
-    paymentMethod: 'card' as 'card' | 'paypal' | 'klarna' | 'ideal' | 'applepay',
+    paymentMethod: 'card' as 'card' | 'bunq' | 'bank_transfer' | 'usdt',
     cardNumber: '4532 •••• •••• 8821',
     cardExp: '08/28',
     cardCvc: '849',
     shippingSpeed: 'standard' as 'standard' | 'express'
   });
 
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [usdtNetwork, setUsdtNetwork] = useState<'TRC20' | 'ERC20' | 'BEP20'>('TRC20');
   const [isProcessing, setIsProcessing] = useState(false);
+
+  const copyToClipboard = (text: string, fieldId: string) => {
+    try {
+      if (navigator?.clipboard?.writeText) {
+        navigator.clipboard.writeText(text);
+      }
+    } catch {
+      // fallback
+    }
+    setCopiedField(fieldId);
+    setTimeout(() => setCopiedField(null), 2500);
+  };
 
   const subtotalEur = cartItems.reduce(
     (acc, item) => acc + item.product.price * item.quantity, 
@@ -367,22 +384,31 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   </h4>
                   <div className="grid grid-cols-2 gap-2 mb-3">
                     {[
-                      { id: 'card', label: 'Credit / Debit Card' },
-                      { id: 'paypal', label: 'PayPal' },
-                      { id: 'klarna', label: 'Klarna Pay Later' },
-                      { id: 'ideal', label: 'iDEAL / Bancontact' }
+                      { id: 'card', label: 'Credit Card', badge: 'Visa/MC' },
+                      { id: 'bunq', label: 'BUNQ', badge: 'Instant SEPA' },
+                      { id: 'bank_transfer', label: 'BANK TRANSFER', badge: 'SEPA Wire' },
+                      { id: 'usdt', label: 'USDT', badge: 'Crypto' }
                     ].map((pm) => (
                       <button
                         key={pm.id}
                         type="button"
                         onClick={() => handleFieldChange('paymentMethod', pm.id)}
-                        className={`p-2.5 rounded-xl border text-xs font-semibold text-center transition-all ${
+                        className={`p-2.5 rounded-xl border text-left transition-all ${
                           formData.paymentMethod === pm.id
-                            ? 'bg-emerald-500 text-slate-950 border-emerald-400 font-bold shadow'
-                            : 'bg-slate-950 border-slate-800 text-slate-300 hover:text-white'
+                            ? 'bg-emerald-500/15 border-emerald-400 text-white shadow-sm ring-1 ring-emerald-500'
+                            : 'bg-slate-950 border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
                         }`}
                       >
-                        {pm.label}
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-bold">{pm.label}</span>
+                          <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono font-bold ${
+                            formData.paymentMethod === pm.id 
+                              ? 'bg-emerald-400 text-slate-950' 
+                              : 'bg-slate-800 text-slate-400'
+                          }`}>
+                            {pm.badge}
+                          </span>
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -421,21 +447,191 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     </div>
                   )}
 
-                  {formData.paymentMethod === 'paypal' && (
-                    <div className="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center text-xs text-slate-300">
-                      You will be redirected to PayPal's secure portal to authorize payment.
+                  {formData.paymentMethod === 'bunq' && (
+                    <div className="bg-slate-950 border border-slate-800 p-3.5 rounded-xl space-y-3">
+                      <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center font-black text-xs">
+                            bq
+                          </div>
+                          <div>
+                            <span className="text-xs font-bold text-white block">bunq Instant SEPA</span>
+                            <span className="text-[10px] text-emerald-400">Zero surcharge • Real-time payment verification</span>
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">
+                          INSTANT CLEARANCE
+                        </span>
+                      </div>
+
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Authorize directly with your bunq mobile app or bunq Web. Fast, fee-free European instant clearing directly to our Trade Port Venlo escrow merchant account.
+                      </p>
+
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5 space-y-2 text-xs">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[11px] text-slate-400">bunq Merchant Account:</span>
+                          <span className="font-semibold text-white font-mono text-[11px]">EuroPalletLiquidation B.V.</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-[11px] text-slate-400">bunq Pay Link / ID:</span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-mono text-emerald-400 font-bold text-[11px]">bunq.me/europallet</span>
+                            <button
+                              type="button"
+                              onClick={() => copyToClipboard('bunq.me/europallet', 'bunq')}
+                              className="text-[10px] bg-slate-800 hover:bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex items-center gap-1 transition-colors"
+                            >
+                              {copiedField === 'bunq' ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                              <span>{copiedField === 'bunq' ? 'Copied' : 'Copy'}</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="p-2.5 bg-emerald-950/30 border border-emerald-800/40 rounded-lg flex items-center gap-2 text-[11px] text-emerald-300">
+                        <Zap className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span>Instant clearing: clicking Complete Order registers your order and dispatches your bunq payment token immediately.</span>
+                      </div>
                     </div>
                   )}
 
-                  {formData.paymentMethod === 'klarna' && (
-                    <div className="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center text-xs text-slate-300">
-                      Pay in 30 days or slice into 3 interest-free payments via Klarna.
+                  {formData.paymentMethod === 'bank_transfer' && (
+                    <div className="bg-slate-950 border border-slate-800 p-3.5 rounded-xl space-y-3">
+                      <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-500/40 text-blue-400 flex items-center justify-center font-black text-xs">
+                            <Building2 className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-bold text-white block">European SEPA Bank Wire Transfer</span>
+                            <span className="text-[10px] text-slate-400">Direct business bank transfer (EUR)</span>
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-mono bg-blue-500/10 text-blue-300 border border-blue-500/30 px-2 py-0.5 rounded-full font-bold">
+                          48H STOCK HOLD
+                        </span>
+                      </div>
+
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Transfer funds from any European bank account using SEPA Credit Transfer. Your items and liquidation pallet reservation are held securely in Venlo.
+                      </p>
+
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-3 space-y-2 text-xs">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[11px] text-slate-400">Beneficiary:</span>
+                          <span className="font-semibold text-white">EuroPalletLiquidation B.V.</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-[11px] text-slate-400">IBAN:</span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-mono text-emerald-400 font-bold text-xs tracking-wider">NL84 BUNQ 2049 8192 44</span>
+                            <button
+                              type="button"
+                              onClick={() => copyToClipboard('NL84BUNQ2049819244', 'iban')}
+                              className="text-[10px] bg-slate-800 hover:bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex items-center gap-1 transition-colors"
+                            >
+                              {copiedField === 'iban' ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                              <span>{copiedField === 'iban' ? 'Copied' : 'Copy'}</span>
+                            </button>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-[11px] text-slate-400">BIC / SWIFT:</span>
+                          <span className="font-mono text-slate-200 font-semibold">BUNQNL2A</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-[11px] text-slate-400">Bank Name:</span>
+                          <span className="text-slate-300">bunq B.V. (Amsterdam, Netherlands)</span>
+                        </div>
+                        <div className="flex items-center justify-between border-t border-slate-800 pt-1.5">
+                          <span className="text-[11px] text-slate-400">Payment Reference:</span>
+                          <span className="font-mono text-amber-300 font-bold">EPL-VENLO-LOTS</span>
+                        </div>
+                      </div>
+
+                      <div className="p-2.5 bg-blue-950/30 border border-blue-800/40 rounded-lg flex items-center gap-2 text-[11px] text-blue-300">
+                        <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
+                        <span>Pro-forma invoice with complete bank wire instructions is emailed immediately upon order placement.</span>
+                      </div>
                     </div>
                   )}
 
-                  {formData.paymentMethod === 'ideal' && (
-                    <div className="bg-slate-950 border border-slate-800 p-4 rounded-xl text-center text-xs text-slate-300">
-                      Direct online banking authorization via Rabobank, ING, ABN AMRO, SNS or Bancontact.
+                  {formData.paymentMethod === 'usdt' && (
+                    <div className="bg-slate-950 border border-slate-800 p-3.5 rounded-xl space-y-3">
+                      <div className="flex items-center justify-between border-b border-slate-800/80 pb-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-teal-500/20 border border-teal-500/40 text-teal-400 flex items-center justify-center font-black text-xs">
+                            ₮
+                          </div>
+                          <div>
+                            <span className="text-xs font-bold text-white block">Tether USDT Crypto Payment</span>
+                            <span className="text-[10px] text-teal-400">1 EUR ≈ 1.08 USDT • Rapid 1-Confirmation Clearing</span>
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-mono bg-teal-500/10 text-teal-300 border border-teal-500/30 px-2 py-0.5 rounded-full font-bold">
+                          {(finalTotalEur * 1.08).toFixed(2)} USDT
+                        </span>
+                      </div>
+
+                      {/* Network Selector */}
+                      <div>
+                        <label className="text-[10px] uppercase font-bold text-slate-400 block mb-1.5">
+                          Select USDT Network:
+                        </label>
+                        <div className="grid grid-cols-3 gap-1.5">
+                          {(['TRC20', 'ERC20', 'BEP20'] as const).map((net) => (
+                            <button
+                              key={net}
+                              type="button"
+                              onClick={() => setUsdtNetwork(net)}
+                              className={`py-1.5 px-2 rounded-lg text-xs font-mono font-bold text-center border transition-all ${
+                                usdtNetwork === net
+                                  ? 'bg-teal-500/20 border-teal-400 text-teal-300 ring-1 ring-teal-500'
+                                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                              }`}
+                            >
+                              {net} {net === 'TRC20' && <span className="text-[9px] block text-emerald-400 font-sans font-normal">Fee ~$1</span>}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* USDT Deposit Address Box */}
+                      <div className="bg-slate-900 border border-slate-800 rounded-lg p-2.5 space-y-2">
+                        <div className="flex items-center justify-between text-[11px]">
+                          <span className="text-slate-400">USDT {usdtNetwork} Deposit Address:</span>
+                          <button
+                            type="button"
+                            onClick={() => copyToClipboard(
+                              usdtNetwork === 'TRC20'
+                                ? 'TX7Yx3d8V9s4K2m8P1q9W4L5n2R6T9Q8vJ'
+                                : '0x89205A3A3b2A55314AE441CAbA9f00d23C79919C',
+                              'usdt'
+                            )}
+                            className="text-[10px] bg-slate-800 hover:bg-slate-700 text-slate-200 px-2 py-0.5 rounded flex items-center gap-1 transition-colors"
+                          >
+                            {copiedField === 'usdt' ? <Check className="w-3 h-3 text-teal-400" /> : <Copy className="w-3 h-3" />}
+                            <span>{copiedField === 'usdt' ? 'Copied' : 'Copy Address'}</span>
+                          </button>
+                        </div>
+
+                        <div className="font-mono text-[11px] break-all bg-slate-950 p-2 rounded border border-slate-800 text-teal-300 select-all">
+                          {usdtNetwork === 'TRC20'
+                            ? 'TX7Yx3d8V9s4K2m8P1q9W4L5n2R6T9Q8vJ'
+                            : '0x89205A3A3b2A55314AE441CAbA9f00d23C79919C'}
+                        </div>
+
+                        <div className="flex items-center justify-between text-[11px] pt-1 text-slate-300">
+                          <span>Exact Amount Due:</span>
+                          <span className="font-mono font-bold text-white text-xs">{(finalTotalEur * 1.08).toFixed(2)} USDT</span>
+                        </div>
+                      </div>
+
+                      <div className="p-2.5 bg-teal-950/30 border border-teal-800/40 rounded-lg flex items-center gap-2 text-[11px] text-teal-300">
+                        <Coins className="w-4 h-4 text-teal-400 shrink-0" />
+                        <span>Transfer funds from Binance, Bybit, Kraken, or your private wallet. Dispatches upon 1 confirmation.</span>
+                      </div>
                     </div>
                   )}
                 </div>

@@ -57,7 +57,15 @@ Discount: -EUR ${order.discountEur.toFixed(2)} ${order.couponCode ? `(Code: ${or
 Shipping (${order.shippingMethod.name}): EUR ${order.shippingEur.toFixed(2)}
 VAT (Included 21%): EUR ${order.vatEur.toFixed(2)}
 TOTAL PAID: EUR ${order.totalEur.toFixed(2)}
-Payment Method: ${order.paymentMethod.toUpperCase()} (Authorized & Secured)
+Payment Method: ${
+  order.paymentMethod === 'bunq' 
+    ? 'BUNQ (Instant Bank Transfer)' 
+    : order.paymentMethod === 'bank_transfer'
+    ? 'BANK TRANSFER (SEPA European Wire)'
+    : order.paymentMethod === 'usdt'
+    ? 'USDT (Tether Blockchain Payment)'
+    : 'CREDIT / DEBIT CARD (Visa/Mastercard)'
+} (Authorized & Secured)
 =====================================================
 Thank you for shopping with EuroPalletLiquidation.eu!
 30-Day Money-Back Guarantee • 2-Year European Consumer Warranty

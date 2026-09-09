@@ -12,7 +12,8 @@ import {
   Share2, 
   Flame, 
   Package, 
-  AlertCircle 
+  AlertCircle,
+  CheckCircle2 
 } from 'lucide-react';
 import { Product, Currency, ProductVariant } from '../types';
 import { formatCurrency } from '../utils/formatters';
@@ -64,7 +65,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       >
         {/* Sticky Header with Close */}
         <div className="sticky top-0 bg-slate-900/95 backdrop-blur z-20 px-4 sm:px-6 py-3 flex items-center justify-between border-b border-slate-800">
-          <div className="flex items-center gap-2 text-xs">
+          <div className="flex items-center gap-2 text-xs flex-wrap">
+            {product.palletCode && (
+              <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-mono font-black text-[11px] shadow-sm">
+                PALLET #{String(product.palletNumber).padStart(2, '0')} [{product.palletCode}]
+              </span>
+            )}
             <span className="font-bold text-emerald-400 uppercase tracking-wide">
               {product.brand}
             </span>
@@ -109,9 +115,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 src={product.images[selectedImageIndex] || product.images[0]}
                 alt={product.title}
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
               <div className="absolute top-3 left-3 bg-emerald-500 text-slate-950 font-black font-mono text-xs px-2.5 py-1 rounded-lg shadow-md">
                 -{product.discountPercentage}% OUTLET PRICE
+              </div>
+              <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-mono font-bold text-amber-300 border border-amber-500/30 flex items-center gap-1.5 shadow-md">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>SEALED PALLET • READY TO DELIVER</span>
               </div>
               <div className="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/30">
                 {product.condition}
@@ -129,7 +140,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       selectedImageIndex === idx ? 'border-emerald-500 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img src={img} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </button>
                 ))}
               </div>

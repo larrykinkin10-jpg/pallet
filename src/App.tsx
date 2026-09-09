@@ -14,6 +14,7 @@ import { OrderConfirmationModal } from './components/OrderConfirmationModal';
 import { WishlistDrawer } from './components/WishlistDrawer';
 import { TrackOrderModal } from './components/TrackOrderModal';
 import { Footer } from './components/Footer';
+import { PalletDropdownMenu } from './components/PalletDropdownMenu';
 import { CheckCircle2, ShoppingBag } from 'lucide-react';
 
 export default function App() {
@@ -269,6 +270,15 @@ export default function App() {
               onViewProduct={handleViewProduct}
               onSelectCategory={handleSelectCategory}
             />
+
+            {/* Quick 20 Pallet Products Dropdown Selector Bar */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 mb-6 relative z-20">
+              <PalletDropdownMenu
+                currency={currency}
+                onSelectProduct={handleViewProduct}
+                variant="catalog"
+              />
+            </section>
 
             {/* Department Categories Grid */}
             <CategoryGrid

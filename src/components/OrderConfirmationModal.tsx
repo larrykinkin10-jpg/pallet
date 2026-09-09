@@ -124,13 +124,59 @@ export const OrderConfirmationModal: React.FC<OrderConfirmationModalProps> = ({
             ))}
           </div>
 
-          <div className="flex justify-between pt-2 text-xs font-bold text-slate-200">
-            <span>Total Paid</span>
+          <div className="flex justify-between items-center pt-2 text-xs font-bold text-slate-200">
+            <div>
+              <span>Total Paid</span>
+              <span className="text-[10px] text-slate-400 block font-normal">
+                Method: {
+                  order.paymentMethod === 'bunq' 
+                    ? 'bunq Instant Transfer' 
+                    : order.paymentMethod === 'bank_transfer'
+                    ? 'SEPA Bank Wire Transfer'
+                    : order.paymentMethod === 'usdt'
+                    ? 'USDT Tether Crypto'
+                    : 'Credit / Debit Card'
+                }
+              </span>
+            </div>
             <span className="text-emerald-400 font-mono text-sm">
               {formatCurrency(order.totalEur, currency)}
             </span>
           </div>
         </div>
+
+        {order.paymentMethod === 'bank_transfer' && (
+          <div className="bg-blue-950/40 border border-blue-800/60 p-3 rounded-xl text-xs space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-blue-300 block">
+              SEPA Wire Instructions (Stock Held 48 Hours)
+            </span>
+            <p className="text-[11px] text-slate-300">
+              Please transfer <strong className="text-white">{formatCurrency(order.totalEur, currency)}</strong> to IBAN: <code className="bg-slate-900 px-1.5 py-0.5 rounded text-emerald-400 font-mono">NL84 BUNQ 2049 8192 44</code> (BIC: <code className="font-mono text-slate-300">BUNQNL2A</code>) using reference: <code className="bg-slate-900 px-1.5 py-0.5 rounded text-amber-300 font-mono">{order.orderNumber}</code>.
+            </p>
+          </div>
+        )}
+
+        {order.paymentMethod === 'usdt' && (
+          <div className="bg-teal-950/40 border border-teal-800/60 p-3 rounded-xl text-xs space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-teal-300 block">
+              USDT Crypto Clearing
+            </span>
+            <p className="text-[11px] text-slate-300">
+              Amount: <strong className="text-white">{(order.totalEur * 1.08).toFixed(2)} USDT</strong>. Transaction broadcast registered. Dispatched upon standard network confirmation.
+            </p>
+          </div>
+        )}
+
+        {order.paymentMethod === 'bunq' && (
+          <div className="bg-emerald-950/40 border border-emerald-800/60 p-3 rounded-xl text-xs space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300 block">
+              bunq Instant SEPA Authorized
+            </span>
+            <p className="text-[11px] text-slate-300">
+              Instant mobile payment authorized with Trade Port Venlo merchant escrow. Order dispatched via {order.carrier}.
+            </p>
+          </div>
+        )}
 
         {/* Delivery Address */}
         <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-start gap-2">

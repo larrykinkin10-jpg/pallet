@@ -15,7 +15,7 @@ export const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
   currency,
   onSelectProduct,
   onSearchSubmit,
-  placeholder = 'Search deals by brand (Apple, Sony, Dyson), product or SKU...'
+  placeholder = 'Search deals by brand (Apple, Hugo Boss, Nike, Dyson) or category (Apparel, Audio)...'
 }) => {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -175,7 +175,7 @@ export const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
           ) : (
             <div className="p-5 text-center text-slate-400">
               <p className="text-xs font-medium text-slate-300">No outlet deals matched "{query}"</p>
-              <p className="text-[11px] text-slate-500 mt-1">Try searching for Apple, Sony, Dyson, DeLonghi, or Kitchen</p>
+              <p className="text-[11px] text-slate-500 mt-1">Try searching for Apparel, Footwear, Hugo Boss, Nike, Apple, or Dyson</p>
             </div>
           )}
 

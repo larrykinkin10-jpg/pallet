@@ -17,6 +17,7 @@ import {
 import { Currency, Product, CartItem } from '../types';
 import { CATEGORIES } from '../data/categories';
 import { SearchAutocomplete } from './SearchAutocomplete';
+import { PalletDropdownMenu } from './PalletDropdownMenu';
 import { formatCurrency } from '../utils/formatters';
 
 interface HeaderProps {
@@ -189,20 +190,31 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Category Pills Quick Bar */}
-      <div className="border-t border-slate-800/80 bg-slate-950/60 overflow-x-auto scrollbar-none">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center gap-2 text-xs">
+      <div className="border-t border-slate-800/80 bg-slate-950/80 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center gap-2.5 text-xs overflow-x-auto scrollbar-none">
+          {/* All 20 Pallet Products Dropdown Menu */}
+          <div className="shrink-0">
+            <PalletDropdownMenu
+              currency={currency}
+              onSelectProduct={onSelectProduct}
+              variant="header"
+            />
+          </div>
+
+          <div className="h-5 w-px bg-slate-800 shrink-0 mx-1 hidden sm:block" />
+
           <button
             onClick={() => {
               onSelectCategory('all');
               onNavigateCatalog();
             }}
-            className={`px-3 py-1 rounded-full shrink-0 font-bold transition-colors ${
+            className={`px-3 py-1.5 rounded-xl shrink-0 font-bold transition-colors ${
               selectedCategoryId === null
                 ? 'bg-emerald-500 text-slate-950'
                 : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
             }`}
           >
-            🔥 All Outlet Deals
+            🔥 All Deals
           </button>
 
           {CATEGORIES.map(cat => (
@@ -212,7 +224,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onSelectCategory(cat.id);
                 onNavigateCatalog();
               }}
-              className={`px-3 py-1 rounded-full shrink-0 font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-xl shrink-0 font-medium transition-colors ${
                 selectedCategoryId === cat.id
                   ? 'bg-emerald-500 text-slate-950 font-bold'
                   : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700'
@@ -226,7 +238,22 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden bg-slate-900 border-t border-slate-800 p-4 space-y-3">
+        <div className="sm:hidden bg-slate-900 border-t border-slate-800 p-4 space-y-3.5">
+          {/* Mobile Direct 20 Pallets Dropdown */}
+          <div className="space-y-1.5 pb-2 border-b border-slate-800">
+            <span className="text-slate-400 font-bold uppercase tracking-wider block text-[10px]">
+              All 20 Pallet Products Dropdown
+            </span>
+            <PalletDropdownMenu
+              currency={currency}
+              onSelectProduct={(p) => {
+                onSelectProduct(p);
+                setIsMobileMenuOpen(false);
+              }}
+              variant="compact"
+            />
+          </div>
+
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => {
@@ -249,11 +276,11 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
-          <div className="pt-2 border-t border-slate-800 text-xs space-y-1.5">
+          <div className="pt-2 border-t border-slate-800 text-xs space-y-1.5 max-h-56 overflow-y-auto">
             <span className="text-slate-400 font-bold uppercase tracking-wider block text-[10px]">
-              Categories
+              All Departments & Categories
             </span>
-            {CATEGORIES.slice(0, 6).map(cat => (
+            {CATEGORIES.map(cat => (
               <button
                 key={cat.id}
                 onClick={() => {
@@ -261,9 +288,12 @@ export const Header: React.FC<HeaderProps> = ({
                   onNavigateCatalog();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full text-left py-1.5 text-slate-300 hover:text-emerald-400"
+                className={`w-full text-left py-1.5 px-2 rounded-lg flex items-center justify-between transition-colors ${
+                  selectedCategoryId === cat.id ? 'bg-emerald-500/20 text-emerald-300 font-bold' : 'text-slate-300 hover:text-emerald-400 hover:bg-slate-800/50'
+                }`}
               >
-                {cat.name}
+                <span>{cat.name}</span>
+                <span className="text-[10px] text-slate-500">{cat.itemCount} items</span>
               </button>
             ))}
           </div>
