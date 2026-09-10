@@ -32,6 +32,8 @@ export interface Product {
   categoryName: string;
   price: number; // Liquidation outlet price
   originalMSRP: number;
+  unboxedTotalWorth?: number; // Total verified retail worth after unboxing the pallet
+  productQuality?: string; // Quality rating & certification description
   discountPercentage: number;
   rating: number;
   reviewCount: number;

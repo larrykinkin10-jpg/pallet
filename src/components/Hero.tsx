@@ -14,6 +14,7 @@ import {
 import { Currency, Product } from '../types';
 import { PRODUCTS } from '../data/products';
 import { formatCurrency } from '../utils/formatters';
+import heroWarehouseWorker from '../assets/images/hero_warehouse_worker.jpg';
 
 interface HeroProps {
   currency: Currency;
@@ -51,11 +52,23 @@ export const Hero: React.FC<HeroProps> = ({
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800 py-8 md:py-14">
-      {/* Background visual grid subtle ambient */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-25 pointer-events-none" />
+    <div className="relative overflow-hidden w-full min-h-[580px] lg:min-h-[640px] flex items-center border-b border-slate-800/90 py-10 md:py-16 lg:py-20">
+      {/* Full-width and full-length hero image backdrop */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
+        <img
+          src={heroWarehouseWorker}
+          alt="Central Europe Liquidation Logistics and Pallet Warehouse Hub in Venlo"
+          className="w-full h-full object-cover object-[center_28%] lg:object-[65%_25%]"
+          referrerPolicy="no-referrer"
+        />
+        {/* Layered cinematic gradients ensuring warehouse photo visibility while guaranteeing optimal text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60" />
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Retail Value Pitch (7 cols) */}

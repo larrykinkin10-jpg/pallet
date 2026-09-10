@@ -13,7 +13,12 @@ import {
   Flame, 
   Package, 
   AlertCircle,
-  CheckCircle2 
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  Camera,
+  Sparkles,
+  Layers
 } from 'lucide-react';
 import { Product, Currency, ProductVariant } from '../types';
 import { formatCurrency } from '../utils/formatters';
@@ -110,39 +115,128 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           
           {/* Left Column: Gallery (6 cols) */}
           <div className="md:col-span-6 space-y-3">
-            <div className="relative h-72 sm:h-84 w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+            <div className="relative h-72 sm:h-84 w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 group">
               <img
                 src={product.images[selectedImageIndex] || product.images[0]}
                 alt={product.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all duration-300"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute top-3 left-3 bg-emerald-500 text-slate-950 font-black font-mono text-xs px-2.5 py-1 rounded-lg shadow-md">
+              <div className="absolute top-3 left-3 bg-emerald-500 text-slate-950 font-black font-mono text-xs px-2.5 py-1 rounded-lg shadow-md z-10">
                 -{product.discountPercentage}% OUTLET PRICE
               </div>
-              <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-mono font-bold text-amber-300 border border-amber-500/30 flex items-center gap-1.5 shadow-md">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>SEALED PALLET • READY TO DELIVER</span>
+
+              {/* Dynamic Status Badge based on active image */}
+              <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-xs font-mono font-bold border flex items-center gap-1.5 shadow-md z-10">
+                {selectedImageIndex === 0 ? (
+                  <span className="text-amber-300 border-amber-500/30 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>SEALED PALLET • READY TO DELIVER</span>
+                  </span>
+                ) : selectedImageIndex === 1 ? (
+                  <span className="text-cyan-300 border-cyan-500/30 flex items-center gap-1.5">
+                    <Camera className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>LIVE PRODUCT PHOTO #1 • UNBOXED</span>
+                  </span>
+                ) : selectedImageIndex === 2 ? (
+                  <span className="text-cyan-300 border-cyan-500/30 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>LIVE PRODUCT PHOTO #2 • DETAIL ANGLE</span>
+                  </span>
+                ) : (
+                  <span className="text-emerald-300 border-emerald-500/30 flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>TAMPER-PROOF MANIFEST SEAL</span>
+                  </span>
+                )}
               </div>
-              <div className="absolute bottom-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/30">
-                {product.condition}
+
+              {/* Prev / Next Navigation Arrows */}
+              {product.images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex((prev) => (prev === 0 ? product.images.length - 1 : prev - 1));
+                    }}
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur border border-slate-700/80 transition-transform active:scale-95 opacity-80 group-hover:opacity-100 shadow-md"
+                    title="Previous photo"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedImageIndex((prev) => (prev === product.images.length - 1 ? 0 : prev + 1));
+                    }}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur border border-slate-700/80 transition-transform active:scale-95 opacity-80 group-hover:opacity-100 shadow-md"
+                    title="Next photo"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </>
+              )}
+
+              {/* Condition Tag & Image Counter Bottom */}
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                <span className="bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-md text-xs font-semibold text-emerald-400 border border-emerald-500/30">
+                  {product.condition}
+                </span>
+                <span className="bg-slate-900/90 backdrop-blur px-2 py-1 rounded-md text-[11px] font-mono text-slate-300 border border-slate-700">
+                  {selectedImageIndex + 1} / {product.images.length} Photos
+                </span>
               </div>
             </div>
 
-            {/* Thumbnail Row */}
+            {/* Labeled Thumbnails Row */}
             {product.images.length > 1 && (
-              <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                {product.images.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setSelectedImageIndex(idx)}
-                    className={`relative w-16 h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all ${
-                      selectedImageIndex === idx ? 'border-emerald-500 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'
-                    }`}
-                  >
-                    <img src={img} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                  </button>
-                ))}
+              <div className="grid grid-cols-4 gap-2 pt-1">
+                {product.images.map((img, idx) => {
+                  const label = idx === 0 
+                    ? 'Sealed Pallet' 
+                    : idx === 1 
+                    ? 'Live Photo 1' 
+                    : idx === 2 
+                    ? 'Live Photo 2' 
+                    : 'Manifest Seal';
+                  const isSelected = selectedImageIndex === idx;
+
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setSelectedImageIndex(idx)}
+                      className={`group/thumb relative rounded-xl overflow-hidden border-2 transition-all flex flex-col items-center bg-slate-950 ${
+                        isSelected 
+                          ? 'border-emerald-500 ring-2 ring-emerald-500/30 scale-[1.02]' 
+                          : 'border-slate-800 opacity-70 hover:opacity-100 hover:border-slate-700'
+                      }`}
+                    >
+                      <div className="w-full h-14 overflow-hidden relative">
+                        <img 
+                          src={img} 
+                          alt={label} 
+                          className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform" 
+                          referrerPolicy="no-referrer" 
+                        />
+                        {idx === 0 ? (
+                          <span className="absolute top-1 left-1 w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-slate-950"></span>
+                        ) : idx === 1 || idx === 2 ? (
+                          <span className="absolute top-1 left-1 w-2 h-2 rounded-full bg-cyan-400 ring-2 ring-slate-950"></span>
+                        ) : (
+                          <span className="absolute top-1 left-1 w-2 h-2 rounded-full bg-amber-400 ring-2 ring-slate-950"></span>
+                        )}
+                      </div>
+                      <div className={`w-full py-1 text-center text-[10px] font-mono font-bold tracking-tight truncate px-1 transition-colors ${
+                        isSelected ? 'bg-emerald-500 text-slate-950 font-black' : 'bg-slate-900 text-slate-400'
+                      }`}>
+                        {label}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             )}
 
@@ -199,6 +293,41 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     </span>
                     <span className="text-[10px] text-slate-400 block mt-1">
                       Includes 21% EU VAT
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pallet Unboxing Valuation & Certified Quality Box */}
+              <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-emerald-500/30 rounded-xl p-3.5 mt-2.5 shadow-sm">
+                <div className="flex items-center justify-between border-b border-slate-800/80 pb-2 mb-2.5">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Quality: {product.productQuality || 'Grade A+ Factory Sealed (100% Brand New, Untampered Seals)'}</span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/40">
+                    CERTIFIED UNOPENED
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <span className="text-slate-400 text-[10px] uppercase font-semibold block tracking-wider">
+                      Total Worth After Unboxing
+                    </span>
+                    <span className="font-mono font-black text-amber-300 text-base sm:text-lg">
+                      {formatCurrency(product.unboxedTotalWorth || product.originalMSRP, currency)}
+                    </span>
+                    <span className="text-[10px] text-slate-500 block">Verified EU Retail MSRP</span>
+                  </div>
+                  <div className="border-l border-slate-800/80 pl-3">
+                    <span className="text-slate-400 text-[10px] uppercase font-semibold block tracking-wider">
+                      Unboxed Resale Margin
+                    </span>
+                    <span className="font-mono font-black text-emerald-400 text-base sm:text-lg">
+                      +{formatCurrency(savingsEur, currency)}
+                    </span>
+                    <span className="text-[10px] text-emerald-400/80 block font-semibold">
+                      +{product.discountPercentage}% Unboxed Equity
                     </span>
                   </div>
                 </div>
@@ -337,8 +466,54 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
           <div className="pt-4 text-xs sm:text-sm text-slate-300">
             {activeTab === 'features' && (
-              <div className="space-y-3">
-                <p className="leading-relaxed">{product.description}</p>
+              <div className="space-y-4">
+                {/* Visual Unboxing Worth & Quality Box */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <div className="flex items-start gap-2.5">
+                    <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider font-bold text-slate-400 block">
+                        Verified Product Quality
+                      </span>
+                      <span className="text-xs font-bold text-emerald-300">
+                        {product.condition}
+                      </span>
+                      <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                        Grade A+ pristine European liquidation lot. Sealed at origin factory with untampered holographic stickers and full warranty.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5">
+                    <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 shrink-0">
+                      <Package className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider font-bold text-slate-400 block">
+                        Total Worth After Unboxing
+                      </span>
+                      <span className="text-xs font-mono font-bold text-amber-300">
+                        {formatCurrency(product.unboxedTotalWorth || product.originalMSRP, currency)} Retail Worth
+                      </span>
+                      <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                        Instant profit / equity surplus of <strong className="text-emerald-400">+{formatCurrency(savingsEur, currency)} ({product.discountPercentage}%)</strong> compared to the {formatCurrency(product.price, currency)} pallet lot price.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Full Manifest Description */}
+                <div className="space-y-1.5 bg-slate-900/40 p-3.5 rounded-xl border border-slate-800/80">
+                  <span className="font-bold text-white block text-xs uppercase tracking-wider">
+                    Pallet Description, Quality & Valuation:
+                  </span>
+                  <p className="leading-relaxed text-slate-300 text-xs sm:text-sm">
+                    {product.description}
+                  </p>
+                </div>
+
                 <div className="space-y-1.5 mt-2">
                   <span className="font-bold text-white block text-xs uppercase tracking-wider">
                     Highlighted Features:

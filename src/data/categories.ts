@@ -9,6 +9,7 @@ import palletGamingLot from '../assets/images/pallet_gaming_lot_1788994889705.jp
 import palletVacuumLot from '../assets/images/pallet_vacuum_lot_1788994901223.jpg';
 import palletSmartHomeLot from '../assets/images/pallet_smarthome_lot_1788994914615.jpg';
 import palletOutdoorLot from '../assets/images/pallet_outdoor_lot_1788994925936.jpg';
+import palletWearablesLot from '../assets/images/pallet_wearables_lot_1788996773738.jpg';
 
 export const CATEGORIES: Category[] = [
   {
@@ -86,7 +87,7 @@ export const CATEGORIES: Category[] = [
     name: 'Smartwatches & Fitness',
     slug: 'smartwatches-wearables',
     icon: 'Watch',
-    image: palletElectronicsLot,
+    image: palletWearablesLot,
     description: 'GPS multisport smartwatches, fitness trackers, and optical heart rate monitors.',
     itemCount: 24,
     popularBrands: ['Garmin', 'Apple Watch', 'Samsung Galaxy', 'Fitbit']
